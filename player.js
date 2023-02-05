@@ -28,8 +28,8 @@ export class Player {
     this.currentState.handleInput(input);
     // horizontal movement
     this.x += this.speed;
-    if(input.includes('ArrowRight') && this.currentState !==this.states[6]) this.speed = this.maxSpeed;
-    else if (input.includes('ArrowLeft') && this.currentState !==this.states[6]) this.speed = -this.maxSpeed;
+    if((input.includes('ArrowRight') && this.currentState !==this.states[6]) || (input.includes('hold right') && this.currentState !==this.states[6])) this.speed = this.maxSpeed;
+    else if ((input.includes('ArrowLeft') && this.currentState !==this.states[6]) || input.includes('hold left') && this.currentState !==this.states[6]) this.speed = -this.maxSpeed;
     else this.speed = 0;
     // horizontal boundaries
     if(this.x < 0) this.x = 0;
@@ -51,8 +51,16 @@ export class Player {
 
   }
   draw(context) {
-    if(this.game.debug) context.strokeRect(this.x, this.y, this.width, this.height);
+    if(this.game.debug) {
+      context.beginPath();
+      context.arc(this.x + this.width/2, this.y + this.height/2, this.width/2, 0, Math.PI * 2);
+      context.stroke();
+    }
     context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
+  }
+  restart() {
+    this.x = 0;
+    this.y = this.game.height - this.height - this.game.groundMargin;
   }
   onGround() {
     return this.y >= this.game.height - this.height - this.game.groundMargin;
@@ -64,12 +72,10 @@ export class Player {
   }
   checkCollision() {
     this.game.enemies.forEach(enemy => {
-      if(
-        enemy.x < this.x + this.width && 
-        enemy.x + enemy.width > this.x && 
-        enemy.y < this.y + this.height &&
-        enemy.y + enemy.height > this.y
-      ) {
+      const dx = (enemy.x + enemy.width/2) - (this.x + this.width/2);
+      const dy = (enemy.y + enemy.height/2) - (this.y + this.height/2);
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if(distance < enemy.width/2 + this.width/2) {
         // collision detected
         enemy.markedForDeletion = true;
         this.game.collisions.push(new CollisionAnimation(this.game, enemy.x + enemy.width * 0.5, enemy.y + enemy.height * 0.5))

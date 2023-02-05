@@ -16,6 +16,9 @@ class Layer {
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
     context.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
   }
+  restart() {
+    this.x = 0;
+  }
 }
 
 export class Background {
@@ -43,6 +46,11 @@ export class Background {
   draw(context) {
     this.backgroundLayers.forEach(layer => {
       layer.draw(context);
+    });
+  }
+  restart() {
+    this.backgroundLayers.forEach(layer => {
+      layer.restart();
     });
   }
 }

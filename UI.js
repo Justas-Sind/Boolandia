@@ -25,7 +25,7 @@ export class UI {
       context.drawImage(this.livesImage, 25 * i + 20, 95, 25, 25);
     }
     //game over messages
-    if( this.game.gameOver) {
+    if(this.game.gameOver) {
       context.textAlign = 'center';
       context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
       if(this.game.score > 5) {

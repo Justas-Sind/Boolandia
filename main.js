@@ -7,7 +7,7 @@ import { UI } from './UI.js';
 window.addEventListener('load', function() {
   const canvas = document.querySelector('#canvas1');
   const ctx = canvas.getContext('2d');
-  canvas.width = 900;
+  canvas.width = 1300;
   canvas.height = 500;
 
   class Game {
@@ -103,6 +103,20 @@ window.addEventListener('load', function() {
       else if(this.speed > 0) this.enemies.push(new ClimbingEnemy(this));
 
       this.enemies.push(new FlyingEnemy(this));
+    }
+    restartGame() {
+      this.player.restart();
+      this.background.restart();
+      this.player.currentState = this.player.states[0];
+      this.player.currentState.enter();
+      this.enemies = [];
+      this.particles = [];
+      this.collisions = [];
+      this.score = 0;
+      this.time = 0;
+      this.lives = 3;
+      this.gameOver = false;
+      animate(0);
     }
   }
 
