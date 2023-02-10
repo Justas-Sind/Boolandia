@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
   const ctx = canvas.getContext('2d');
   canvas.width = 1300;
   canvas.height = 500;
+  const fullScreenButton = document.querySelector('#fullScreenButton');
 
   class Game {
     constructor(width, height) {
@@ -119,6 +120,17 @@ window.addEventListener('load', function() {
       animate(0);
     }
   }
+  
+  
+  function toggleFullScreen() {
+    if(!document.fullscreenElement) {
+      canvas.requestFullscreen().catch(err => alert(`Error: ${err.message}`))
+    }else {
+      document.exitFullscreen();
+    }
+  }
+
+  fullScreenButton.addEventListener('click', toggleFullScreen);
 
   const game = new Game(canvas.width, canvas.height);
   let lastTime = 0;
