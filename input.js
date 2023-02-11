@@ -35,6 +35,8 @@ export class InputHandler {
       this.screenMiddle = e.view.innerWidth/2;
       if(this.touchX < this.screenMiddle && this.keys.indexOf('hold left') === -1 && this.keys.indexOf('hold right') === -1) this.keys.push('hold left');
       else if(this.touchX > this.screenMiddle && this.keys.indexOf('hold right') === -1 && this.keys.indexOf('hold left') === -1) this.keys.push('hold right');
+
+      console.log(e)
     })
     window.addEventListener('touchmove', e => {
       const swipeDistance = e.changedTouches[0].pageY - this.touchY;
