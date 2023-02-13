@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
   const ctx = canvas.getContext('2d');
   canvas.width = 1300;
   canvas.height = 500;
+  const canvasContainer = document.querySelector('#canvasContainer');
   const fullScreenButton = document.querySelector('#fullScreenButton');
 
   class Game {
@@ -40,6 +41,7 @@ window.addEventListener('load', function() {
       this.gameOver = false;
       // lives
       this.lives = 3;
+      // distance
       //
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();

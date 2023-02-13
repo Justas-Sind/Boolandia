@@ -48,7 +48,7 @@ export class Running extends State {
     this.game.particles.unshift(new Dust(this.game, this.game.player.x + this.game.player.width * 0.6, this.game.player.y + this.game.player.height));
     if(input.includes('ArrowDown') || input.includes('swipe down')) {
       this.game.player.setState(states.SITTING, 0);
-    } else if(input.includes('ArrowUp') || input.includes('swipe up')) {
+    } else if(input.includes('ArrowUp') || input.includes('left-side tap')) {
       this.game.player.setState(states.JUMPING, 1);
     } else if(input.includes(' ')) {
       this.game.player.setState(states.ROLLING, 2);
@@ -61,7 +61,7 @@ export class Jumping extends State {
     super('JUMPING', game);
   }
   enter() {
-    if(this.game.player.onGround()) this.game.player.vy -= 27;
+    if(this.game.player.onGround()) this.game.player.vy -= 25;
     this.game.player.frameX = 0;
     this.game.player.maxFrame = 6;
     this.game.player.frameY = 1;

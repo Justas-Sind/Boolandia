@@ -44,6 +44,7 @@ body {
   bottom: 20%;
   right: 22%;
   font-size: 3.5rem;
+  opacity: 0.8;
 }
 
 #arrowRight {
@@ -53,6 +54,7 @@ body {
   bottom: 20%;
   right: 10%;
   font-size: 3.5rem;
+  opacity: 0.8;
 }
 
 #fullScreenButton:hover {
