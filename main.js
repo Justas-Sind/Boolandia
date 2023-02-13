@@ -42,6 +42,8 @@ window.addEventListener('load', function() {
       // lives
       this.lives = 3;
       // distance
+      this.distance = 0;
+      this.distanceModifier = 0.025;
       //
       this.player.currentState = this.player.states[0];
       this.player.currentState.enter();
@@ -50,6 +52,9 @@ window.addEventListener('load', function() {
       // Game time limit
       this.time += deltaTime;
       if(this.time > this.maxTime) this.gameOver = true;
+      //
+      // distance
+      if(this.player.currentState !== this.player.states[0]) this.distance += this.distanceModifier;
       //
       this.background.update();
       this.player.update(this.input.keys, deltaTime);
@@ -118,6 +123,7 @@ window.addEventListener('load', function() {
       this.score = 0;
       this.time = 0;
       this.lives = 3;
+      this.distance = 0;
       this.gameOver = false;
       animate(0);
     }

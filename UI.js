@@ -16,7 +16,7 @@ export class UI {
     context.textAlign = 'left';
     context.fillStyle = this.game.fontColor;
     // score
-    context.fillText('Score: ' + this.game.score, 20, 50);
+    context.fillText('Distance: ' + this.game.distance.toFixed(0)  + ' m', 20, 50);
     // timer
     context.font = this.fontSize * 0.8 + 'px ' + this.fontFamily;
     context.fillText('Time: ' + (this.game.time * 0.001).toFixed(1), 20, 80);
@@ -28,15 +28,11 @@ export class UI {
     if(this.game.gameOver) {
       context.textAlign = 'center';
       context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
-      if(this.game.score > 5) {
-        context.fillText('Nice', this.game.width * 0.5, this.game.height * 0.5 - 20);
-        context.font = this.fontSize * 0.8 + 'px ' + this.fontFamily;
-        context.fillText('But you can do better', this.game.width * 0.5, this.game.height * 0.5 + 20);
-      } else {
-        context.fillText('Ooof...', this.game.width * 0.5, this.game.height * 0.5 - 20);
-        context.font = this.fontSize * 0.8 + 'px ' + this.fontFamily;
-        context.fillText('Try again', this.game.width * 0.5, this.game.height * 0.5 + 20);
-      }
+
+      context.fillText('Distance: ' + this.game.distance.toFixed(0) + ' m', this.game.width * 0.5, this.game.height * 0.5 - 20);
+      context.font = this.fontSize * 1 + 'px ' + this.fontFamily;
+      context.fillText('You can do better...', this.game.width * 0.5, this.game.height * 0.5 + 20);
+
 
     }
     context.restore();
