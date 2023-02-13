@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
   const canvas = document.querySelector('#canvas1');
   const ctx = canvas.getContext('2d');
   canvas.width = 1300;
-  canvas.height = 500;
+  canvas.height = 512;
   const canvasContainer = document.querySelector('#canvasContainer');
   const fullScreenButton = document.querySelector('#fullScreenButton');
 
