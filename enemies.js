@@ -39,12 +39,12 @@ export class FlyingEnemy extends Enemy {
     this.height = 44;
     this.x = this.game.width + Math.random() * this.game.width * 0.5;
     this.y = Math.random() * this.game.height * 0.5;
-    this.speedX = Math.random() + 1;
+    this.speedX = Math.random() + 0.25;
     this.speedY = 0;
     this.maxFrame = 5;
     this.image = document.querySelector('#enemy_fly');
     this.angle = 0;
-    this.va = Math.random() * 0.1 + 0.1;
+    this.va = Math.random() * 0.05 + 0.1;
   }
   update(deltaTime) {
     super.update(deltaTime);

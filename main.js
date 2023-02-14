@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
       this.height = height;
       this.groundMargin = 40;
       this.speed = 0;
-      this.maxSpeed = 3;
+      this.maxSpeed = 2;
       this.background = new Background(this);
       this.player = new Player(this);
       this.input = new InputHandler(this);
@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
       //
       this.maxParticles = 50;
       this.enemyTimer = 0;
-      this.enemyInterval = 1500;
+      this.enemyInterval = 1000;
       this.debug = false;
       this.score = 0;
       this.fontColor = 'black';

@@ -4,7 +4,7 @@ export class InputHandler {
     this.keys = [];
     this.touchX = '';
     this.touchY = '';
-    this.touchTreshold = 20;
+    this.touchTreshold = 0;
     window.addEventListener('keydown', e => {
       if((    e.key === 'ArrowDown' || 
               e.key === 'ArrowUp' ||
