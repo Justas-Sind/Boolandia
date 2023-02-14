@@ -9,7 +9,6 @@ window.addEventListener('load', function() {
   const ctx = canvas.getContext('2d');
   canvas.width = 1300;
   canvas.height = 512;
-  const canvasContainer = document.querySelector('#canvasContainer');
   const fullScreenButton = document.querySelector('#fullScreenButton');
 
   class Game {
@@ -31,7 +30,7 @@ window.addEventListener('load', function() {
       //
       this.maxParticles = 50;
       this.enemyTimer = 0;
-      this.enemyInterval = 1000;
+      this.enemyInterval = 1500;
       this.debug = false;
       this.score = 0;
       this.fontColor = 'black';

@@ -53,7 +53,7 @@ export class Player {
   draw(context) {
     if(this.game.debug) {
       context.beginPath();
-      context.arc(this.x + this.width/2, this.y + this.height/2, this.width/2, 0, Math.PI * 2);
+      context.arc(this.x + this.width/2, this.y + this.height/2 + 10, this.width/3.2, 0, Math.PI * 2);
       context.stroke();
     }
     context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x, this.y, this.width, this.height);
@@ -72,10 +72,10 @@ export class Player {
   }
   checkCollision() {
     this.game.enemies.forEach(enemy => {
-      const dx = (enemy.x + enemy.width/2 - 20) - (this.x + this.width/2);
+      const dx = (enemy.x + enemy.width/2) - (this.x + this.width/2);
       const dy = (enemy.y + enemy.height/2) - (this.y + this.height/2 + 20);
       const distance = Math.sqrt(dx * dx + dy * dy);
-      if(distance < enemy.width/3 + this.width/3) {
+      if(distance < enemy.width/3 + this.width/3.2) {
         // collision detected
         enemy.markedForDeletion = true;
         this.game.collisions.push(new CollisionAnimation(this.game, enemy.x + enemy.width * 0.5, enemy.y + enemy.height * 0.5))
