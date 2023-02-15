@@ -16,7 +16,7 @@ body {
   height: 100dvh;
 }
 
-.landingPage button {
+.gameStartButton {
   padding: 0.5rem 1rem;
   font-size: 2rem;
   border: none;
@@ -27,16 +27,24 @@ body {
   transition: all 400ms;
 }
 
-.landingPage button:hover {
+.gameStartButton:hover {
   cursor: pointer;
   box-shadow: 0 0 32px 16px #fbcfe8;
 }
 
+.displayNone {
+  display: none;
+}
+
 /* Game page */
-#gameArea {
-  display: grid;
+.gameArea {
+  display: none;
   place-items: center;
   height: 100dvh;
+}
+
+.gameStart {
+  display: grid;
 }
 
 .canvasContainer {

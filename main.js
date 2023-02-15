@@ -4,6 +4,14 @@ import { Background } from './background.js';
 import { FlyingEnemy, GroundEnemy, ClimbingEnemy } from './enemies.js';
 import { UI } from './UI.js';
 
+const gameArea = document.querySelector('.gameArea');
+const gameStartButton = document.querySelector('.gameStartButton');
+const landingPage = document.querySelector('.landingPage');
+gameStartButton.addEventListener('click', () => {
+  gameArea.classList.add('gameStart');
+  landingPage.classList.add('displayNone')
+})
+
 window.addEventListener('load', function() {
   const canvas = document.querySelector('#canvas1');
   const ctx = canvas.getContext('2d');
@@ -152,3 +160,7 @@ window.addEventListener('load', function() {
   }
   animate(0);
 });
+
+if (document.readyState === 'complete') {
+  console.log('loaded')
+}
