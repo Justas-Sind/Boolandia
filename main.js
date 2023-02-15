@@ -5,6 +5,7 @@ import { FlyingEnemy, GroundEnemy, ClimbingEnemy } from './enemies.js';
 import { UI } from './UI.js';
 
 const gameArea = document.querySelector('.gameArea');
+const loadSpinner = document.querySelector('.loadSpinner');
 const gameStartButton = document.querySelector('.gameStartButton');
 const landingPage = document.querySelector('.landingPage');
 gameStartButton.addEventListener('click', () => {
@@ -161,6 +162,10 @@ window.addEventListener('load', function() {
   animate(0);
 });
 
-if (document.readyState === 'complete') {
-  console.log('loaded')
-}
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    console.log('loaded');
+    loadSpinner.classList.add('displayNone');
+    gameStartButton.classList.remove("displayNone");
+  }
+};

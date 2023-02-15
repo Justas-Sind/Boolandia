@@ -32,6 +32,16 @@ body {
   box-shadow: 0 0 32px 16px #fbcfe8;
 }
 
+.loadSpinner img {
+  width: 100%;
+  height: 100%;
+}
+
+.loadSpinner {
+  overflow: hidden;
+  width: 100px;
+}
+
 .displayNone {
   display: none;
 }
