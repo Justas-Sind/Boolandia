@@ -5,7 +5,7 @@
 }
 
 body {
-  padding: 0 10vw;
+  padding: 0 5vw;
 }
 
 /* Landing page */
@@ -84,7 +84,7 @@ body {
   color: white;
   position: absolute;
   bottom: 20%;
-  right: 22%;
+  right: 25%;
   font-size: 3.5rem;
   opacity: 0.7;
 }
@@ -93,7 +93,7 @@ body {
   color: white;
   position: absolute;
   bottom: 20%;
-  right: 10%;
+  right: 12%;
   font-size: 3.5rem;
   opacity: 0.7;
 }
