@@ -5,10 +5,34 @@
 }
 
 body {
-
   padding: 0 10vw;
 }
 
+/* Landing page */
+.landingPage {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.landingPage button {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border: none;
+  box-shadow: 0 0 8px 4px #fbcfe8;
+  border-radius: 10px;
+  color: white;
+  background-color: #f9a8d4;
+  transition: all 400ms;
+}
+
+.landingPage button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 32px 16px #fbcfe8;
+}
+
+/* Game page */
 #gameArea {
   display: grid;
   place-items: center;
