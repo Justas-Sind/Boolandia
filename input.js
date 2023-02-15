@@ -4,7 +4,7 @@ export class InputHandler {
     this.keys = [];
     this.touchX = '';
     this.touchY = '';
-    this.touchTreshold = 0;
+    this.touchTreshold = 50;
     window.addEventListener('keydown', e => {
       if((    e.key === 'ArrowDown' || 
               e.key === 'ArrowUp' ||
@@ -38,15 +38,18 @@ export class InputHandler {
       if(this.touchX < this.screenMiddle && this.keys.indexOf('left-side tap') === -1 && this.touchY > this.screenVerticalMiddle) this.keys.push('left-side tap');
       else if(this.touchX > this.screenMiddle && this.touchX < this.screenRightSideMiddle && this.keys.indexOf('hold right') === -1 && this.keys.indexOf('hold left') === -1) this.keys.push('hold left');
       else if(this.touchX > this.screenRightSideMiddle && this.keys.indexOf('hold right') === -1 && this.keys.indexOf('hold left') === -1) this.keys.push('hold right');
+      else if(this.touchX < this.screenMiddle && this.touchY < this.screenVerticalMiddle & this.keys.indexOf('swipe down') === -1) this.keys.push('swipe down');
 
       if(e.target.id === 'arrowLeft' && this.keys.indexOf('hold left') === -1) this.keys.push('hold left')
       else if(e.target.id === 'arrowRight' && this.keys.indexOf('hold right') === -1) this.keys.push('hold right')
     })
     window.addEventListener('touchmove', e => {
-      const swipeDistance = e.changedTouches[0].pageY - this.touchY;
-      if(swipeDistance > this.touchTreshold && this.keys.indexOf('swipe down') === -1 && this.touchX < this.screenMiddle && this.touchY < this.screenVerticalMiddle) this.keys.push('swipe down');
+      //const swipeDistance = e.changedTouches[0].pageY - this.touchY;
+      //if(swipeDistance > this.touchTreshold && this.keys.indexOf('swipe down') === -1 && this.touchX < this.screenMiddle && this.touchY < this.screenVerticalMiddle) this.keys.push('swipe down');
 
-      if(this.game.gameOver) {
+      const swipeDistance = this.touchY - e.changedTouches[0].pageY;
+
+      if(this.game.gameOver && swipeDistance > this.touchTreshold) {
         this.game.restartGame();
       }
     })

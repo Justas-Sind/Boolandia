@@ -22,16 +22,17 @@ export class UI {
     context.fillText('Time: ' + (this.game.time * 0.001).toFixed(1), 20, 80);
     // lives
     for(let i=0; i<this.game.lives; i++) {
-      context.drawImage(this.livesImage, 25 * i + 20, 95, 25, 25);
+      context.drawImage(this.livesImage, 30 * i + 20, 95, 25, 25);
     }
     //game over messages
     if(this.game.gameOver) {
       context.textAlign = 'center';
-      context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
 
+      context.font = this.fontSize * 2.5 + 'px ' + this.fontFamily;
       context.fillText('Distance: ' + this.game.distance.toFixed(0) + ' m', this.game.width * 0.5, this.game.height * 0.5 - 20);
-      context.font = this.fontSize * 1 + 'px ' + this.fontFamily;
-      context.fillText('You can do better...', this.game.width * 0.5, this.game.height * 0.5 + 20);
+
+      context.font = this.fontSize * 1.5 + 'px ' + this.fontFamily;
+      context.fillText('You can do better... Swipe up to restart', this.game.width * 0.5, this.game.height * 0.5 + 25);
 
 
     }
