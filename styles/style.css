@@ -137,6 +137,8 @@ body {
   border-radius: 1rem;
   color: #ff7c94;
   background-color: #fff4d2;
+  border: 2px solid white;
+  box-shadow: 0 0 8px 1px white;
   transition: all 400ms;
   position: relative;
   z-index: 5;
