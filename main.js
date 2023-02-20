@@ -5,7 +5,7 @@ import { FlyingEnemy, GroundEnemy, ClimbingEnemy } from './enemies.js';
 import { UI } from './UI.js';
 
 const gameArea = document.querySelector('.gameArea');
-const loadSpinner = document.querySelector('.loadSpinner');
+const waveLoader = document.querySelector('.waveLoader');
 const gameStartButton = document.querySelector('.gameStartButton');
 const landingPage = document.querySelector('.landingPage');
 gameStartButton.addEventListener('click', () => {
@@ -165,7 +165,7 @@ window.addEventListener('load', function() {
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
     console.log('loaded');
-    loadSpinner.classList.add('displayNone');
+    waveLoader.classList.add('displayNone');
     gameStartButton.classList.remove("displayNone");
   }
 };

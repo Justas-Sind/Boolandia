@@ -5,26 +5,129 @@
 }
 
 body {
-  padding: 0 5vw;
+  padding: 0 7vw;
+  background: conic-gradient(at 125% 50%, #b78cf7, #ff7c94, #ffcf0d, #ff7c94, #b78cf7);
 }
 
 /* Landing page */
 .landingPage {
   display: grid;
   place-items: center;
+  position: relative;
   height: 100vh;
   height: 100dvh;
 }
 
+.pawMark1 {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  transform: rotate(145deg);
+  opacity: 0;
+  -webkit-animation: pawMark1 2s 1s ease-out;
+          animation: pawMark1 2s 1s ease-out;
+}
+
+.pawMark2 {
+  position: absolute;
+  top: 12%;
+  left: 42%;
+  transform: rotate(155deg);
+  opacity: 0;
+  -webkit-animation: pawMark1 2s 2s ease-out;
+          animation: pawMark1 2s 2s ease-out;
+}
+
+.pawMark3 {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  transform: rotate(155deg);
+  opacity: 0;
+  -webkit-animation: pawMark1 2s 3s ease-out;
+          animation: pawMark1 2s 3s ease-out;
+}
+
+.pawMark4 {
+  position: absolute;
+  top: 28%;
+  left: 48%;
+  transform: rotate(165deg);
+  opacity: 0;
+  -webkit-animation: pawMark1 2s 4s ease-out;
+          animation: pawMark1 2s 4s ease-out;
+}
+
+.pawMark5 {
+  position: absolute;
+  top: 40%;
+  left: 44%;
+  transform: rotate(155deg);
+  opacity: 0;
+  -webkit-animation: pawMark1 2s 5s ease-out;
+          animation: pawMark1 2s 5s ease-out;
+}
+
+@media screen and (max-width: 800px) {
+  .pawMark1 {
+    top: 5%;
+    left: 20%;
+    transform: rotate(145deg);
+  }
+  
+  .pawMark2 {
+    top: 10%;
+    left: 42%;
+    transform: rotate(155deg);
+  }
+  
+  .pawMark3 {
+    top: 21%;
+    left: 38%;
+    transform: rotate(160deg);
+  }
+  
+  .pawMark4 {
+    top: 30%;
+    left: 48%;
+    transform: rotate(180deg);
+  }
+  
+  .pawMark5 {
+    top: 40%;
+    left: 40%;
+    transform: rotate(180deg);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .pawMark5 {
+    display: none;
+  }
+}
+
+@-webkit-keyframes pawMark1 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .gameStartButton {
   padding: 0.5rem 1rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
   border: none;
-  box-shadow: 0 0 8px 4px #fbcfe8;
-  border-radius: 10px;
-  color: white;
-  background-color: #f9a8d4;
+  border-radius: 1rem;
+  color: #ff7c94;
+  background-color: #fff4d2;
   transition: all 400ms;
+  position: relative;
+  z-index: 5;
 }
 
 .gameStartButton:hover {
@@ -32,14 +135,96 @@ body {
   box-shadow: 0 0 32px 16px #fbcfe8;
 }
 
-.loadSpinner img {
-  width: 100%;
-  height: 100%;
+.waveLoader {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+  border-radius: 50%;
 }
 
-.loadSpinner {
-  overflow: hidden;
-  width: 100px;
+.waveLoader:before, .waveLoader:after {
+  content: '';
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0px;
+}
+
+.waveLoader:before {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+  opacity: 1;
+  -webkit-animation: spWaveBe 0.6s infinite linear;
+          animation: spWaveBe 0.6s infinite linear;
+}
+
+.waveLoader:after {
+  -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0;
+  -webkit-animation: spWaveAf 0.6s infinite linear;
+          animation: spWaveAf 0.6s infinite linear;
+}
+
+@-webkit-keyframes spWaveAf {
+  from {
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes spWaveAf {
+  from {
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes spWaveBe {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+@keyframes spWaveBe {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
 }
 
 .displayNone {
@@ -63,7 +248,7 @@ body {
 
 #canvas1 {
   width: 100%;
-  border: 2px solid rgba(241, 95, 146, 0.5);
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.501);
   font-family: 'Inter', sans-serif;
 }
 
