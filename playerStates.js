@@ -31,6 +31,8 @@ export class Sitting extends State {
       this.game.player.setState(states.RUNNING, 1);
     } else if(input.includes(' ')) {
       this.game.player.setState(states.ROLLING, 2);
+    } else if(input.includes('ArrowUp') || input.includes('left-side tap')) {
+      this.game.player.setState(states.JUMPING, 1);
     }
   }
 }
