@@ -101,6 +101,18 @@ body {
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
+  .pawMark1 {
+    transform: scale(70%) rotate(145deg);
+  }
+  .pawMark2 {
+    transform: scale(70%) rotate(155deg);
+  }
+  .pawMark3 {
+    transform: scale(70%) rotate(160deg);
+  }
+  .pawMark4 {
+    transform: scale(70%) rotate(180deg);
+  }
   .pawMark5 {
     display: none;
   }
