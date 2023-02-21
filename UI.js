@@ -28,12 +28,22 @@ export class UI {
     if(this.game.gameOver) {
       context.textAlign = 'center';
 
-      context.font = this.fontSize * 2.5 + 'px ' + this.fontFamily;
-      context.fillText('Distance: ' + this.game.distance.toFixed(0) + ' m', this.game.width * 0.5, this.game.height * 0.5 - 20);
-
-      context.font = this.fontSize * 1.5 + 'px ' + this.fontFamily;
-      context.fillText('You can do better... Swipe up to restart', this.game.width * 0.5, this.game.height * 0.5 + 25);
-
+      if(this.game.distance < 500) {
+        context.font = this.fontSize * 3 + 'px ' + this.fontFamily;
+        context.fillText('Distance: ' + this.game.distance.toFixed(0) + ' m', this.game.width * 0.5, this.game.height * 0.5 - 20);
+        context.font = this.fontSize * 1.5 + 'px ' + this.fontFamily;
+        context.fillText('You can do better, boo... Swipe up to restart', this.game.width * 0.5, this.game.height * 0.5 + 25);
+      } else if(this.game.distance >= 500 && this.game.distance < 1000) {
+        context.font = this.fontSize * 3 + 'px ' + this.fontFamily;
+        context.fillText('Distance: ' + this.game.distance.toFixed(0) + ' m', this.game.width * 0.5, this.game.height * 0.5 - 20);
+        context.font = this.fontSize * 1.5 + 'px ' + this.fontFamily;
+        context.fillText('The boo is on fire! Swipe up to restart', this.game.width * 0.5, this.game.height * 0.5 + 25);
+      } else if(this.game.distance >= 1000) {
+        context.font = this.fontSize * 3 + 'px ' + this.fontFamily;
+        context.fillText('Distance: ' + this.game.distance.toFixed(0) + ' m', this.game.width * 0.5, this.game.height * 0.5 - 20);
+        context.font = this.fontSize * 1.5 + 'px ' + this.fontFamily;
+        context.fillText('You are the true emperor, Boo!', this.game.width * 0.5, this.game.height * 0.5 + 25);
+      }
 
     }
     context.restore();

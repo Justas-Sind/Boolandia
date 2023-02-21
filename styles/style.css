@@ -18,6 +18,15 @@ body {
   height: 100dvh;
 }
 
+.bdayText {
+  font-family: 'Mynerve', cursive;
+  color: white;
+  position: absolute;
+  transform: rotate(30deg);
+  top: 25%;
+  right: 0;
+}
+
 .pawMark1 {
   position: absolute;
   top: 5%;
@@ -69,30 +78,31 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .bdayText {
+    font-size: 1rem;
+    top: 10%;
+    transform: rotate(20deg);
+  }
   .pawMark1 {
     top: 5%;
     left: 20%;
     transform: rotate(145deg);
   }
-  
   .pawMark2 {
     top: 10%;
     left: 42%;
     transform: rotate(155deg);
   }
-  
   .pawMark3 {
     top: 21%;
     left: 38%;
     transform: rotate(160deg);
   }
-  
   .pawMark4 {
     top: 30%;
     left: 48%;
     transform: rotate(180deg);
   }
-  
   .pawMark5 {
     top: 40%;
     left: 40%;
@@ -101,6 +111,11 @@ body {
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
+  .bdayText {
+    font-size: 1.25rem;
+    top: 25%;
+    transform: rotate(20deg);
+  }
   .pawMark1 {
     transform: scale(70%) rotate(145deg);
   }
