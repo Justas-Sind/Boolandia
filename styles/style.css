@@ -6,7 +6,14 @@
 
 body {
   padding: 0 7vw;
-  background: conic-gradient(at 125% 50%, #b78cf7, #ff7c94, #ffcf0d, #ff7c94, #b78cf7);
+  background: conic-gradient(
+    at 125% 50%,
+    #b78cf7,
+    #ff7c94,
+    #ffcf0d,
+    #ff7c94,
+    #b78cf7
+  );
 }
 
 /* Landing page */
@@ -19,7 +26,7 @@ body {
 }
 
 .bdayText {
-  font-family: 'Mynerve', cursive;
+  font-family: "Mynerve", cursive;
   color: white;
   position: absolute;
   transform: rotate(30deg);
@@ -34,7 +41,7 @@ body {
   transform: rotate(145deg);
   opacity: 0;
   -webkit-animation: pawMark1 2s 1s ease-out;
-          animation: pawMark1 2s 1s ease-out;
+  animation: pawMark1 2s 1s ease-out;
 }
 
 .pawMark2 {
@@ -44,7 +51,7 @@ body {
   transform: rotate(155deg);
   opacity: 0;
   -webkit-animation: pawMark1 2s 2s ease-out;
-          animation: pawMark1 2s 2s ease-out;
+  animation: pawMark1 2s 2s ease-out;
 }
 
 .pawMark3 {
@@ -54,7 +61,7 @@ body {
   transform: rotate(155deg);
   opacity: 0;
   -webkit-animation: pawMark1 2s 3s ease-out;
-          animation: pawMark1 2s 3s ease-out;
+  animation: pawMark1 2s 3s ease-out;
 }
 
 .pawMark4 {
@@ -64,7 +71,7 @@ body {
   transform: rotate(165deg);
   opacity: 0;
   -webkit-animation: pawMark1 2s 4s ease-out;
-          animation: pawMark1 2s 4s ease-out;
+  animation: pawMark1 2s 4s ease-out;
 }
 
 .pawMark5 {
@@ -74,7 +81,7 @@ body {
   transform: rotate(155deg);
   opacity: 0;
   -webkit-animation: pawMark1 2s 5s ease-out;
-          animation: pawMark1 2s 5s ease-out;
+  animation: pawMark1 2s 5s ease-out;
 }
 
 @media screen and (max-width: 800px) {
@@ -175,8 +182,9 @@ body {
   border-radius: 50%;
 }
 
-.waveLoader:before, .waveLoader:after {
-  content: '';
+.waveLoader:before,
+.waveLoader:after {
+  content: "";
   border: 2px solid #ffffff;
   border-radius: 50%;
   width: 50px;
@@ -187,71 +195,71 @@ body {
 
 .waveLoader:before {
   -webkit-transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
-          transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
   opacity: 1;
   -webkit-animation: spWaveBe 0.6s infinite linear;
-          animation: spWaveBe 0.6s infinite linear;
+  animation: spWaveBe 0.6s infinite linear;
 }
 
 .waveLoader:after {
   -webkit-transform: scale(0, 0);
-      -ms-transform: scale(0, 0);
-          transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
   opacity: 0;
   -webkit-animation: spWaveAf 0.6s infinite linear;
-          animation: spWaveAf 0.6s infinite linear;
+  animation: spWaveAf 0.6s infinite linear;
 }
 
 @-webkit-keyframes spWaveAf {
   from {
     -webkit-transform: scale(0.5, 0.5);
-            transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
     opacity: 0;
   }
   to {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
   }
 }
 @keyframes spWaveAf {
   from {
     -webkit-transform: scale(0.5, 0.5);
-            transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
     -webkit-transform: scale(0.5, 0.5);
-            transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
     opacity: 0;
   }
   to {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
   }
 }
 @-webkit-keyframes spWaveBe {
   from {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1.5, 1.5);
-            transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
     opacity: 0;
   }
 }
 @keyframes spWaveBe {
   from {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1.5, 1.5);
-            transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
     opacity: 0;
   }
 }
@@ -278,11 +286,32 @@ body {
 #canvas1 {
   width: 100%;
   box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.501);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-#player, #layer1, #layer2, #layer3, #layer4, #layer5, #layer6, #layer7, #enemy_fly, #enemy_plant, #enemy_spider_big, #fire, #collisionAnimation, #lives {
-  display: none; 
+#player,
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#layer5,
+#layer6,
+#layer7,
+#enemy_fly,
+#enemy_plant,
+#enemy_spider_big,
+#fire,
+#collisionAnimation,
+#lives {
+  display: none;
 }
 
 #fullScreenButton {
@@ -325,15 +354,15 @@ body {
   cursor: pointer;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1060px) {
   #arrowLeft {
     display: none;
   }
-  
+
   #arrowRight {
     display: none;
   }
-  
+
   #arrowUp {
     display: none;
   }
