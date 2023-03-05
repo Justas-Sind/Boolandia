@@ -11,17 +11,17 @@ export class Player {
     this.y = this.game.height - this.height - this.game.groundMargin;
     this.vy = 0;
     // Jumping state related
-    this.weight = 0.25;
+    this.weight = 1;
     //
     this.image = document.querySelector('#player');
     this.frameX = 0;
     this.frameY = 0;
     this.maxFrame;
     this.fps = 20;
-    this.frameInterval = 1000/this.fps;
+    this.frameInterval = 600/this.fps;
     this.frameTimer = 0;
     this.speed = 0;
-    this.maxSpeed = 5;
+    this.maxSpeed = 7;
     this.states = [new Sitting(this.game), new Running(this.game), new Jumping(this.game), new Falling(this.game), new Rolling(this.game), new Diving(this.game), new Hit(this.game)];
     this.currentState = null;
   }
